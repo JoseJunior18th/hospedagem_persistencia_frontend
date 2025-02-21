@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <title>Cadastro de Atividades</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h2>Cadastro de Atividades</h2>
+    <form id="atividadeForm">
+        <label>Descrição:</label>
+        <input type="text" id="descricao" required><br><br>
+        
+        <label>Categoria:</label>
+        <select id="categoria" onchange="atualizarClassificacoes()" required>
+            <option value="">Selecione</option>
+            <option value="ensino">Ensino</option>
+            <option value="extensao">Extensão</option>
+            <option value="pesquisa">Pesquisa</option>
+        </select><br><br>
+        
+        <label>Classificação:</label>
+        <select id="classificacao" required></select><br><br>
+        
+        <label>Quantidade de Horas:</label>
+        <input type="number" id="horas" required><br><br>
+        
+        <button type="button" onclick="cadastrarAtividade()">Cadastrar</button>
+        <p id="erro" style="color: red;"></p>
+    </form>
+
+    <h2>Atividades Cadastradas</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Descrição</th>
+                <th>Horas Aproveitadas</th>
+            </tr>
+        </thead>
+        <tbody id="tabelaAtividades"></tbody>
+        <tfoot>
+            <tr>
+                <th>Total Ensino</th>
+                <th id="totalEnsino">0</th>
+            </tr>
+            <tr>
+                <th>Total Extensão</th>
+                <th id="totalExtensao">0</th>
+            </tr>
+            <tr>
+                <th>Total Pesquisa</th>
+                <th id="totalPesquisa">0</th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
