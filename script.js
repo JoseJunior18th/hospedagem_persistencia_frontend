@@ -39,7 +39,7 @@ let totais = { ensino: 0, extensao: 0, pesquisa: 0 };
 
 async function loadDataTotal() {
     console.log("Reqiest feito")
-    const url_request = "http://localhost:3030/query-sum";
+    const url_request = "http://18.230.95.142:3030/query-sum";
     try {
         const response = await axios.get(url_request);
         if (response.data) {
@@ -56,7 +56,7 @@ async function loadDataTotal() {
 }
 
 async function loadDescription(){
-    const url_request = "http://localhost:3030/query-descriptions";
+    const url_request = "http://18.230.95.142:3030/query-descriptions";
     try {
         const response = await axios.get(url_request);
         if (response.data) {
@@ -137,7 +137,7 @@ function cadastrarAtividade() {
 
 
 async function saveData(data){
-    const url_request = "http://localhost:3030/save-activities";
+    const url_request = "http://18.230.95.142:3030/save-activities";
     const response = await axios.post(url_request, data);
     console.log(response);
 
